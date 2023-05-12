@@ -21,22 +21,29 @@ public class App
         Scanner sc = new Scanner(System.in);
 
         int saisie = 0;
-        //int essai = 5;
+        int cptEssai = 5;
 
         System.out.println("Devine un nb entre 1 et 100");
 
         do {
             System.out.println("Entre un nb :");
             saisie = sc.nextInt();
+            cptEssai--;
 
             if (nbADeviner < saisie){
                 System.out.println("le nb est + petit ");
             } else if (nbADeviner > saisie) {
                 System.out.println("le nb est + grand ");
-            }else {
-                System.out.println("Gagné !");
+            } else {
+                System.out.println("Bravo !!");
             }
-        }while (saisie != nbADeviner);
+
+
+        }while (saisie != nbADeviner && cptEssai != 0);
+
+        if (saisie != nbADeviner && cptEssai == 0){
+            System.out.println("Perdu !");
+        }
 
 
     }
